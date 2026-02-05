@@ -101,7 +101,8 @@ class _GaemScreenState extends State<GaemScreen> {
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.14,
-            right: MediaQuery.of(context).size.height * 0.25,
+            right: MediaQuery.of(context).size.height * 1,
+            left: MediaQuery.of(context).size.height * 1,
             child: _player(),
           ),
           Positioned(
