@@ -41,29 +41,7 @@ class _LobbyScreenState extends State<LobbyScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: [
-                //     _appBarN(
-                //       '${widget.player.greenChips}',
-                //       Color(0xff98DEE3),
-                //       () {},
-                //     ),
-                //     _appBarN(
-                //       '${widget.player.redChips}',
-                //       Color(0xff98DEE3),
-                //       () {},
-                //     ),
-                //     _appBarN(
-                //       '${widget.player.blackChips}',
-                //       Color(0xff98DEE3),
-                //       () {},
-                //     ),
-                //   ],
-                // ),
-
-                
-                const SizedBox(height: 40),
+                const SizedBox(height: 20),
                 _buildEventButton(
                   icon: Icons.casino,
                   label: 'Cash Games',
