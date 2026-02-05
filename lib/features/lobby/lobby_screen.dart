@@ -36,7 +36,6 @@ class _LobbyScreenState extends State<LobbyScreen> {
       body: Stack(
         children: [
           _image(),
-
           SafeArea(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

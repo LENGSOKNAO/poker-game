@@ -5,6 +5,10 @@ class ImagePokerGame {
   static const tableImage = '$url/table.png';
   static const bgfull = '$url/bgfull.png';
   static const card1 = '$url/bgfull.png';
+  static const bg = '$url/felt_bg.webp';
+  static const boxPlayer = '$url/nameplate_opponent.webp';
+  static const boxUser = '$url/nameplate_user.webp';
+  static const h10 = '$url/card/h10.png';
 
   static const bgGame = '$url/bgGame.png';
   static const tableGame = '$url/tableGame.png';

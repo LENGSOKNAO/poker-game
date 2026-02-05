@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:poker_game_app/core/image/image_netowork.dart';
-import 'dart:math' as math;
 
 class GaemScreen extends StatefulWidget {
   const GaemScreen({super.key});
@@ -16,127 +14,207 @@ class _GaemScreenState extends State<GaemScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          SizedBox(
+          Container(
             height: double.infinity,
-            child: Image.asset(ImagePokerGame.bgGame, fit: BoxFit.cover),
-          ),
-          Center(
-            child: SizedBox(
-              child: Transform.rotate(
-                angle: math.pi / 2,
-                child: Image.asset(ImagePokerGame.tableGame, fit: BoxFit.cover),
+            width: double.infinity,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(ImagePokerGame.bg),
+                fit: BoxFit.cover,
               ),
             ),
           ),
-
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _iconBtn(Icons.home, () {}),
-                    _iconBtn(Icons.logout, () {}),
-                  ],
-                ),
-              ),
-            ),
-          ),
-
+          Align(child: Image.asset('assets/intro.webp')),
           Align(
             alignment: Alignment.center,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _card(context),
-                _card(context),
-                _card(context),
-                _card(context),
-                _card(context),
+                SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                SizedBox(width: 60, child: Image.asset('assets/4.webp')),
               ],
             ),
           ),
-
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.4,
-            left: MediaQuery.of(context).size.width * 0.06,
-            child: _player(),
+            top: MediaQuery.of(context).size.height * 0.66,
+            left: 5,
+            child: Center(child: _playerBox()),
           ),
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.4,
-            right: MediaQuery.of(context).size.width * 0.06,
-            child: _player(),
+            top: MediaQuery.of(context).size.height * 0.25,
+            left: 5,
+            child: Center(child: _playerBox()),
           ),
           Positioned(
-            bottom: MediaQuery.of(context).size.height * 0.4,
-            right: MediaQuery.of(context).size.width * 0.06,
-            child: _player(),
+            top: MediaQuery.of(context).size.height * 0.66,
+            right: 5,
+            child: Center(child: _playerBox()),
           ),
           Positioned(
-            bottom: MediaQuery.of(context).size.height * 0.4,
-            left: MediaQuery.of(context).size.width * 0.06,
-            child: _player(),
+            top: MediaQuery.of(context).size.height * 0.25,
+            right: 5,
+            child: Center(child: _playerBox()),
           ),
           Positioned(
-            bottom: MediaQuery.of(context).size.height * 0.28,
-            left: MediaQuery.of(context).size.width * 0.12,
-            child: _player(),
+            bottom: MediaQuery.of(context).size.height * 0.08,
+            left: 0,
+            right: 0,
+            child: Center(child: _userBox()),
           ),
           Positioned(
-            bottom: MediaQuery.of(context).size.height * 0.28,
-            right: MediaQuery.of(context).size.width * 0.12,
-            child: _player(),
-          ),
-          Positioned(
-            top: MediaQuery.of(context).size.height * 0.28,
-            left: MediaQuery.of(context).size.width * 0.12,
-            child: _player(),
-          ),
-          Positioned(
-            top: MediaQuery.of(context).size.height * 0.28,
-            right: MediaQuery.of(context).size.width * 0.12,
-            child: _player(),
-          ),
-          Positioned(
-            top: MediaQuery.of(context).size.height * 0.14,
-            right: MediaQuery.of(context).size.width * 0.45,
-            child: _player(),
-          ),
-          Positioned(
-            bottom: MediaQuery.of(context).size.height * 0.14,
-            right: MediaQuery.of(context).size.width * 0.45,
-            child: _player(),
+            left: 0,
+            right: 0,
+            bottom: MediaQuery.of(context).size.height * 0.03,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _btn("Fold"),
+                _btn("Check"),
+                // _btn("Call"),
+                _btn("Raise"),
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 
-  Container _player() {
-    return Container(
-      width: 50,
-      height: 50,
-      decoration: BoxDecoration(
-        color: Colors.red,
-        borderRadius: BorderRadius.circular(100),
+  ElevatedButton _btn(String text) {
+    return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.black, // poker red
+        foregroundColor: Colors.white70,
+        elevation: 6,
+        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
+        textStyle: const TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 1,
+        ),
       ),
-      child: Text("data"),
+      child: Text(text),
     );
   }
 
-  SizedBox _card(BuildContext context) {
+  SizedBox _userBox() {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.08,
-      child: Image.asset(ImagePokerGame.pokerChipRed, fit: BoxFit.cover),
+      width: 150,
+      height: 150,
+      child: Stack(
+        alignment: Alignment.topCenter,
+        children: [
+          Positioned(
+            top: 0,
+            child: Row(
+              children: [
+                Row(
+                  children: [
+                    SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                    SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                  ],
+                ),
+              ],
+            ),
+          ),
+
+          Positioned(
+            top: 60,
+            left: 0,
+            right: 0,
+            child: Image.asset(ImagePokerGame.boxUser, fit: BoxFit.cover),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Text(
+                '\$1000',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 63),
+              child: Text(
+                'You',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
-  GestureDetector _iconBtn(IconData icon, VoidCallback op) {
-    return GestureDetector(
-      onTap: op,
-      child: Icon(icon, size: 25, color: Colors.white.withOpacity(0.5)),
+  SizedBox _playerBox() {
+    return SizedBox(
+      width: 150,
+      height: 150,
+      child: Stack(
+        alignment: Alignment.topCenter,
+        children: [
+          Positioned(
+            top: 0,
+            child: Row(
+              children: [
+                Row(
+                  children: [
+                    SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                    SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                  ],
+                ),
+              ],
+            ),
+          ),
+
+          Positioned(
+            top: 60,
+            left: 0,
+            right: 0,
+            child: Image.asset(ImagePokerGame.boxPlayer, fit: BoxFit.cover),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Text(
+                '\$1000',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 63),
+              child: Text(
+                'Alice',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
