@@ -61,52 +61,52 @@ class _GaemScreenState extends State<GaemScreen> {
 
           Positioned(
             top: MediaQuery.of(context).size.height * 0.4,
-            left: MediaQuery.of(context).size.height * 0.05,
+            left: MediaQuery.of(context).size.width * 0.06,
             child: _player(),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.4,
-            right: MediaQuery.of(context).size.height * 0.05,
+            right: MediaQuery.of(context).size.width * 0.06,
             child: _player(),
           ),
           Positioned(
             bottom: MediaQuery.of(context).size.height * 0.4,
-            right: MediaQuery.of(context).size.height * 0.05,
+            right: MediaQuery.of(context).size.width * 0.06,
             child: _player(),
           ),
           Positioned(
             bottom: MediaQuery.of(context).size.height * 0.4,
-            left: MediaQuery.of(context).size.height * 0.05,
+            left: MediaQuery.of(context).size.width * 0.06,
             child: _player(),
           ),
           Positioned(
             bottom: MediaQuery.of(context).size.height * 0.28,
-            left: MediaQuery.of(context).size.height * 0.08,
+            left: MediaQuery.of(context).size.width * 0.12,
             child: _player(),
           ),
           Positioned(
             bottom: MediaQuery.of(context).size.height * 0.28,
-            right: MediaQuery.of(context).size.height * 0.08,
+            right: MediaQuery.of(context).size.width * 0.12,
             child: _player(),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.28,
-            left: MediaQuery.of(context).size.height * 0.08,
+            left: MediaQuery.of(context).size.width * 0.12,
             child: _player(),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.28,
-            right: MediaQuery.of(context).size.height * 0.08,
+            right: MediaQuery.of(context).size.width * 0.12,
             child: _player(),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.14,
-            right: MediaQuery.of(context).size.height * 0.25,
+            right: MediaQuery.of(context).size.width * 0.45,
             child: _player(),
           ),
           Positioned(
             bottom: MediaQuery.of(context).size.height * 0.14,
-            right: MediaQuery.of(context).size.height * 0.25,
+            right: MediaQuery.of(context).size.width * 0.45,
             child: _player(),
           ),
         ],
