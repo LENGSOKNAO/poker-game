@@ -36,7 +36,6 @@ class _TournamentScreenState extends State<TournamentScreen> {
                   height: MediaQuery.of(context).size.height * 0.30,
                   child: Image.asset(ImagePokerGame.bgt, fit: BoxFit.cover),
                 ),
-                SizedBox(height: 20),
                 _btn(),
                 SizedBox(height: 20),
                 _board(),
@@ -185,13 +184,13 @@ class _TournamentScreenState extends State<TournamentScreen> {
             padding: const EdgeInsets.only(bottom: 10),
             child: InkWell(
               onTap: () {},
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(5),
               splashColor: Colors.white.withOpacity(0.08),
               child: Container(
-                height: 88,
+                height: 60,
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.06), // glassmorphism style
-                  borderRadius: BorderRadius.circular(16),
+                  color: Colors.white.withOpacity(0.06),
+                  borderRadius: BorderRadius.circular(5),
                   border: Border.all(
                     color: Colors.white.withOpacity(0.12),
                     width: 1,
@@ -240,8 +239,8 @@ class _TournamentScreenState extends State<TournamentScreen> {
                                 end: Alignment.bottomCenter,
                               ),
                         borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(18),
-                          bottomLeft: Radius.circular(18),
+                          topLeft: Radius.circular(5),
+                          bottomLeft: Radius.circular(5),
                         ),
                         boxShadow: const [
                           BoxShadow(
