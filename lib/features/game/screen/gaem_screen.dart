@@ -12,6 +12,20 @@ class _GaemScreenState extends State<GaemScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        leading: _iconsBar(Icons.list_outlined),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+
+            child: _iconsBar(Icons.logout),
+          ),
+        ],
+        backgroundColor: Colors.transparent,
+      ),
       body: Stack(
         children: [
           Container(
@@ -30,32 +44,32 @@ class _GaemScreenState extends State<GaemScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(width: 60, child: Image.asset('assets/4.webp')),
-                SizedBox(width: 60, child: Image.asset('assets/4.webp')),
-                SizedBox(width: 60, child: Image.asset('assets/4.webp')),
-                SizedBox(width: 60, child: Image.asset('assets/4.webp')),
-                SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                SizedBox(width: 50, child: Image.asset('assets/4.webp')),
+                SizedBox(width: 50, child: Image.asset('assets/4.webp')),
+                SizedBox(width: 50, child: Image.asset('assets/4.webp')),
+                SizedBox(width: 50, child: Image.asset('assets/4.webp')),
+                SizedBox(width: 50, child: Image.asset('assets/4.webp')),
               ],
             ),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.66,
-            left: 5,
+            left: 0,
             child: Center(child: _playerBox()),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.25,
-            left: 5,
+            left: 0,
             child: Center(child: _playerBox()),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.66,
-            right: 5,
+            right: 0,
             child: Center(child: _playerBox()),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.25,
-            right: 5,
+            right: 0,
             child: Center(child: _playerBox()),
           ),
           Positioned(
@@ -63,6 +77,12 @@ class _GaemScreenState extends State<GaemScreen> {
             left: 0,
             right: 0,
             child: Center(child: _userBox()),
+          ),
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.08,
+            left: 0,
+            right: 0,
+            child: Center(child: _playerBox()),
           ),
           Positioned(
             left: 0,
@@ -80,6 +100,13 @@ class _GaemScreenState extends State<GaemScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  Padding _iconsBar(IconData icons) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Icon(icons, size: 30, color: Colors.white70),
     );
   }
 
@@ -115,8 +142,8 @@ class _GaemScreenState extends State<GaemScreen> {
               children: [
                 Row(
                   children: [
-                    SizedBox(width: 60, child: Image.asset('assets/4.webp')),
-                    SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                    SizedBox(width: 50, child: Image.asset('assets/4.webp')),
+                    SizedBox(width: 50, child: Image.asset('assets/4.webp')),
                   ],
                 ),
               ],
@@ -173,8 +200,8 @@ class _GaemScreenState extends State<GaemScreen> {
               children: [
                 Row(
                   children: [
-                    SizedBox(width: 60, child: Image.asset('assets/4.webp')),
-                    SizedBox(width: 60, child: Image.asset('assets/4.webp')),
+                    SizedBox(width: 50, child: Image.asset('assets/4.webp')),
+                    SizedBox(width: 50, child: Image.asset('assets/4.webp')),
                   ],
                 ),
               ],

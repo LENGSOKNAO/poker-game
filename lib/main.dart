@@ -21,7 +21,7 @@ class PokerGame extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: appRoutes,
-      initialRoute: AppRoute.gameScreen,
+      initialRoute: AppRoute.onboard,
     );
   }
 }

@@ -8,6 +8,6 @@ class ModelPlayer {
     required this.name,
     required this.avatarUrl,
     required this.cash,
-    required this.chips,
+    this.chips = 0,
   });
 }
