@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:poker_game_app/core/data/player_data.dart';
 import 'package:poker_game_app/core/image/image_netowork.dart';
 import 'package:poker_game_app/core/model/player_mode.dart';
+import 'package:poker_game_app/features/tournament/screen/tournament_screen.dart';
 import 'package:poker_game_app/routes/route.dart';
 
 class LobbyScreen extends StatefulWidget {
@@ -54,7 +56,13 @@ class _LobbyScreenState extends State<LobbyScreen> {
                   label: 'Tournaments',
                   color: Colors.orange.shade800,
                   onTap: () {
-                    Navigator.pushNamed(context, AppRoute.tournamentScreen);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            TournamentScreen(won: widget.player),
+                      ),
+                    );
                   },
                 ),
               ],

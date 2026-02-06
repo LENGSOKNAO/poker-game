@@ -9,6 +9,7 @@ class ImagePokerGame {
   static const boxPlayer = '$url/nameplate_opponent.webp';
   static const boxUser = '$url/nameplate_user.webp';
   static const h10 = '$url/card/h10.png';
+  static const bgt = '$url/pokert.png';
 
   static const bgGame = '$url/bgGame.png';
   static const tableGame = '$url/tableGame.png';
