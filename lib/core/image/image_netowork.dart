@@ -10,6 +10,8 @@ class ImagePokerGame {
   static const boxUser = '$url/nameplate_user.webp';
   static const h10 = '$url/card/h10.png';
   static const bgt = '$url/pokert.png';
+  static const bgh = '$url/intro.webp';
+  static const visible = '$url/bicycle-e-z-see-lovision-spielkarten-rot.png';
 
   static const bgGame = '$url/bgGame.png';
   static const tableGame = '$url/tableGame.png';
